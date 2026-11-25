@@ -15,7 +15,11 @@
   <div class="page">
     <header class="sidebar">
       <div class="sidebar-inner">
-        <a class="logo" href="#work" aria-label="Tushar Vatsa, home"><span>tv</span></a>
+        <!-- TODO: add your photo as profile.jpg in the repo root (square works best). Until then a placeholder shows. -->
+        <a class="photo" href="#work" aria-label="Tushar Vatsa, home">
+          <img src="profile.jpg" alt="Tushar Vatsa" width="160" height="160" onerror="this.remove()">
+        </a>
+        <p class="name">Tushar Vatsa</p>
 
         <p class="intro">Teaching machines to understand language, images and speech.</p>
 
@@ -25,7 +29,10 @@
           <nav class="nav" aria-label="Sections">
             <a href="#work" class="current">Work</a>
             <a href="#about">About Me</a>
-            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Work Experience</a>
+            <a href="#interests">Interests</a>
+            <a href="#achievements">Achievements</a>
             <a href="https://github.com/tusharvatsa32?tab=repositories" target="_blank" rel="noopener">All Repositories <span class="plus">+</span></a>
           </nav>
 
@@ -214,24 +221,93 @@
 
       <section id="about" class="block">
         <h3 class="label">About me</h3>
-        <div class="about">
-          <img class="avatar" src="https://avatars.githubusercontent.com/u/74168532?v=4" alt="Tushar Vatsa" width="140" height="140" loading="lazy">
+        <!-- TODO: rewrite this in your own words -->
+        <p class="lead">Hi, I'm Tushar. I'm a data science and machine learning enthusiast at Carnegie Mellon University.</p>
+        <p class="body">I'm interested in how models learn from data and how to make them fast and reliable in practice. My work spans natural language processing, computer vision and speech, from building networks from scratch to serving large language models efficiently.</p>
+        <p class="skills">Python · PyTorch · Transformers · NLP · Computer Vision · LLMs · Jupyter · Java</p>
+      </section>
+
+      <section id="research" class="block">
+        <h3 class="label">Research</h3>
+        <!-- TODO: replace with your papers, projects or lab work. Copy an <li> to add more. -->
+        <ul class="entries">
+          <li>
+            <span class="when">YYYY</span>
+            <div>
+              <h4>Paper or project title goes here</h4>
+              <p class="meta">Author One, <strong>Tushar Vatsa</strong>, Author Three</p>
+              <p class="meta mono">Venue / Lab · Advisor name</p>
+              <p>One or two lines on the question, the approach and the result.</p>
+              <p class="links"><a href="#">Paper</a><a href="#">Code</a><a href="#">Slides</a></p>
+            </div>
+          </li>
+          <li>
+            <span class="when">YYYY</span>
+            <div>
+              <h4>Second research title</h4>
+              <p class="meta mono">Venue / Lab · Advisor name</p>
+              <p>Short summary of the contribution.</p>
+              <p class="links"><a href="#">Paper</a><a href="#">Code</a></p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience" class="block">
+        <h3 class="label">Work experience</h3>
+        <!-- TODO: fill in your real roles and dates. Copy an <li> to add more. -->
+        <ul class="entries">
+          <li>
+            <span class="when">YYYY — Present</span>
+            <div>
+              <h4>Role title</h4>
+              <p class="meta mono">Company · City</p>
+              <p>What you built or owned, and the impact (numbers help).</p>
+            </div>
+          </li>
+          <li>
+            <span class="when">YYYY — YYYY</span>
+            <div>
+              <h4>Role title</h4>
+              <p class="meta mono">Company · City</p>
+              <p>What you built or owned, and the impact.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="interests" class="block">
+        <h3 class="label">Interests</h3>
+        <!-- TODO: edit to your own interests, research and personal -->
+        <div class="interests">
           <div>
-            <!-- TODO: rewrite this in your own words -->
-            <p class="lead">Hi, I'm Tushar. I'm a data science and machine learning enthusiast at Carnegie Mellon University.</p>
-            <p>I'm interested in how models learn from data and how to make them fast and reliable in practice. My work spans natural language processing, computer vision and speech, from building networks from scratch to serving large language models efficiently. I'm open to roles and collaborations in ML engineering and data science.</p>
-            <p class="skills">Python · PyTorch · Transformers · NLP · Computer Vision · LLMs · Jupyter · Java</p>
+            <h4>In machine learning</h4>
+            <ul>
+              <li>Efficient LLM inference</li>
+              <li>Natural language processing</li>
+              <li>Vision transformers</li>
+              <li>Fairness in ML</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Outside work</h4>
+            <ul>
+              <li>Interest one</li>
+              <li>Interest two</li>
+              <li>Interest three</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section id="experience" class="block">
-        <h3 class="label">Experience &amp; education</h3>
-        <!-- TODO: fill in your real roles, degrees and dates -->
-        <ol class="timeline">
-          <li><span class="when">YYYY — Present</span><div><h4>Role title, Company</h4><p>One or two lines on what you worked on and the impact.</p></div></li>
-          <li><span class="when">YYYY — YYYY</span><div><h4>Degree, Carnegie Mellon University</h4><p>Focus areas, notable coursework or research.</p></div></li>
-        </ol>
+      <section id="achievements" class="block">
+        <h3 class="label">Achievements</h3>
+        <!-- TODO: add awards, scholarships, competition results, talks. Copy an <li> to add more. -->
+        <ul class="entries compact">
+          <li><span class="when">YYYY</span><div><h4>Award or honor</h4><p>Who gave it and why, in one line.</p></div></li>
+          <li><span class="when">YYYY</span><div><h4>Competition result</h4><p>For example, a Kaggle ranking or hackathon placing.</p></div></li>
+          <li><span class="when">YYYY</span><div><h4>Scholarship or talk</h4><p>One line of context.</p></div></li>
+        </ul>
       </section>
     </main>
   </div>

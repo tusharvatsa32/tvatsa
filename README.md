@@ -8,6 +8,7 @@ My personal webpage: a single static page (HTML, CSS and a little JavaScript) wi
 - To add a project, copy one `<a class="card">` block and set `data-tags` to any of `llm nlp vision speech dl`, `--tile` to a background color, and draw a simple inline SVG (or swap in an `<img>`).
 - `style.css` has the colors at the top.
 - Drop a `resume.pdf` in the repo root to make the Resume link work.
+- Add your photo as `profile.jpg` in the repo root (square works best). A gray placeholder shows until then.
 
 Preview locally with `python3 -m http.server` and open http://localhost:8000.
 
