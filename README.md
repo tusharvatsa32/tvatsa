@@ -5,8 +5,8 @@ My personal webpage: a single static page (HTML, CSS and a little JavaScript) wi
 ## Editing
 
 - `index.html` holds all the content. Search for `TODO` to find placeholders (LinkedIn URL, email, resume, experience).
-- To add a project, copy one `<a class="card">` block and set `data-tags` to any of `llm nlp vision speech dl`.
-- `style.css` has the colors at the top, for light and dark mode.
+- To add a project, copy one `<a class="card">` block and set `data-tags` to any of `llm nlp vision speech dl`, `--tile` to a background color, and draw a simple inline SVG (or swap in an `<img>`).
+- `style.css` has the colors at the top.
 - Drop a `resume.pdf` in the repo root to make the Resume link work.
 
 Preview locally with `python3 -m http.server` and open http://localhost:8000.

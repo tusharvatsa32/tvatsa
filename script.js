@@ -1,33 +1,16 @@
 (function () {
-  var root = document.documentElement;
-
-  // Theme toggle (remembers the choice when storage is available)
-  var themeBtn = document.querySelector('.theme-toggle');
-  themeBtn.addEventListener('click', function () {
-    var current = root.dataset.theme ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    var next = current === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) {}
-  });
-
   // Mobile menu
   var sidebar = document.querySelector('.sidebar');
   var menuBtn = document.querySelector('.menu-toggle');
   menuBtn.addEventListener('click', function () {
     var open = sidebar.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', String(open));
-  });
-  document.querySelectorAll('.nav a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      sidebar.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    });
+    menuBtn.querySelector('span').textContent = open ? '−' : '+';
   });
 
-  // Project filters
+  // Works filter
   var filters = document.querySelectorAll('.filter');
-  var cards = document.querySelectorAll('.card');
+  var works = document.querySelectorAll('.work');
   filters.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var f = btn.dataset.filter;
@@ -35,13 +18,16 @@
         b.classList.toggle('active', b === btn);
         b.setAttribute('aria-pressed', String(b === btn));
       });
-      cards.forEach(function (c) {
-        c.hidden = f !== 'all' && c.dataset.tags.split(' ').indexOf(f) === -1;
+      works.forEach(function (w) {
+        w.hidden = f !== 'all' && w.dataset.tags.split(' ').indexOf(f) === -1;
       });
+      if (window.matchMedia('(max-width: 760px)').matches) {
+        document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 
-  // Highlight the nav link for the section in view, and reveal sections
+  // Highlight the nav link for the section in view
   var links = {};
   document.querySelectorAll('.nav a[href^="#"]').forEach(function (a) {
     links[a.getAttribute('href').slice(1)] = a;
@@ -50,22 +36,12 @@
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting && links[e.target.id]) {
-          Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); });
-          links[e.target.id].classList.add('active');
+          Object.keys(links).forEach(function (k) { links[k].classList.remove('current'); });
+          links[e.target.id].classList.add('current');
         }
       });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    var reveal = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); }
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('main section').forEach(function (s) {
-      spy.observe(s);
-      if (s.id !== 'home') { s.classList.add('reveal'); reveal.observe(s); }
-    });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('main section').forEach(function (s) { spy.observe(s); });
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
